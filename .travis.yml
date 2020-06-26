@@ -1,4 +1,4 @@
-notifications:
+  notifications:
   webhooks:
     - https://webhook.commit-email.info/
 dist: xenial
@@ -43,6 +43,15 @@ matrix:
     - name: MariaDB 10.4 binary protocol
       env:
         - MYSQL_VERSION=mariadb-10.4.12
+        - MROONGA_BUNDLED=yes
+        - MROONGA_TEST_PS_PROTOCOL=yes
+    - name: MariaDB 10.5
+      env:
+        - MYSQL_VERSION=mariadb-10.5.4
+        - MROONGA_BUNDLED=yes
+    - name: MariaDB 10.5 binary protocol
+      env:
+        - MYSQL_VERSION=mariadb-10.5.4
         - MROONGA_BUNDLED=yes
         - MROONGA_TEST_PS_PROTOCOL=yes
     - name: Percona Server 5.6
