@@ -318,8 +318,7 @@ typedef HASH mrn_table_def_cache_type;
 #  define MRN_HAVE_PSI_FILE_KEY
 #endif
 
-#ifdef MRN_HAVE_PSI_MEMORY_KEY || \
-  (MYSQL_VERSION_ID >= 100504 && defined(MRN_MARIADB_P))
+#if defined(MRN_HAVE_PSI_MEMORY_KEY) || (MYSQL_VERSION_ID >= 100504 && defined(MRN_MARIADB_P))
 #  define mrn_my_malloc(size, flags) \
   my_malloc(mrn_memory_key, size, flags)
 #  define mrn_my_strdup(string, flags) \
