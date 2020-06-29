@@ -22,7 +22,8 @@
 
 #include "mrn_mysql_compat.h"
 
-#ifdef MRN_HAVE_PSI_MEMORY_KEY
+#if defined(MRN_HAVE_PSI_MEMORY_KEY) || \
+  (MYSQL_VERSION_ID >= 100504 && defined(MRN_MARIADB_P))
 extern PSI_memory_key mrn_memory_key;
 #endif
 
